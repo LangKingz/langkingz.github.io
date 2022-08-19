@@ -79,6 +79,14 @@ section h1 {
   margin-bottom: 10px;
 }
 
+.social-icon {
+  background-position: left bottom;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 80px;
+}
+
 /* end hero */
 
 /* about */
@@ -130,3 +138,27 @@ hr {
 }
 
 /* end skill  */
+
+/* contact */
+
+#contact .warna-tulis {
+  color: var(--acsentColor);
+}
+
+#contact {
+  background-color: var(--secondaryColor);
+  min-height: 300px;
+  margin-top: 100px;
+}
+
+.btn-costum2 {
+  background-color: var(--acsentColor);
+  color: #fff;
+  min-width: 150px;
+  height: 45px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* akhir contact */

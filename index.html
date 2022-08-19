@@ -52,7 +52,7 @@
 
     <section id="hero">
       <div class="container">
-        <div class="row">
+        <div class="row position-relative">
           <div class="col-lg-5 col-md-6 offset-lg-1 my-auto order-1 text-center text-lg-start">
             <h2>Hallo ,</h2>
             <h1 class="fw-bold">I Am Gilang Arya Libna</h1>
@@ -78,7 +78,7 @@
               </svg>
             </button>
 
-            <div class="social-icon position-absolute bottom-0">
+            <div class="social-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 31.297 31.297">
                 <path
                   id="linkedin"
@@ -164,7 +164,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-10">
-              <h1 class="fw-bold text-center">skill</h1>
+              <h1 class="fw-bold text-center">Skill</h1>
               <hr />
             </div>
             <div class="col-lg-10 col-md-12 text-center mt-3">
@@ -329,7 +329,7 @@
                       Web <br />
                       Developer
                     </h3>
-                    <p class="text start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore, doloribus fugiat magni qui voluptate explicabo hic dicta. Quo, aut!</p>
+                    <p class="text start">Membuat Salah satu website Portfolio untuk diri sendiri</p>
                   </div>
                 </div>
               </div>
@@ -363,7 +363,7 @@
                       Designer
                     </h2>
 
-                    <p class="text start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore, doloribus fugiat magni qui voluptate explicabo hic dicta. Quo, aut!</p>
+                    <p class="text start">Sedang belajar membuat Grapich design</p>
                   </div>
                 </div>
               </div>
@@ -405,7 +405,7 @@
                       Frontend <br />
                       Developer
                     </h3>
-                    <p class="text start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore, doloribus fugiat magni qui voluptate explicabo hic dicta. Quo, aut!</p>
+                    <p class="text start">membuat Salah satu Software Frontend dan sekaligus menjalankannya</p>
                   </div>
                 </div>
               </div>
@@ -417,6 +417,45 @@
     <!-- end skill -->
 
     <!-- contact -->
+    <section id="contact">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col py-3">
+              <h1 class="fw-bold">Contact <span class="warna-tulis">Me!</span></h1>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                  <strong>terimakasih!</strong> Pesan anda sudah diterima :)
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <form class="text-light" name="Port-contact">
+                  <div class="mb-3 text-start">
+                    <label for="Name" class="form-label">Nama lengkap</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="Name" name="nama" />
+                  </div>
+                  <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="" aria-describedby="email" name="email" />
+                  </div>
+                  <div class="mb-3 text-start">
+                    <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pesan"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-costum2 btn-kirim">Submit</button>
+                  <!-- loading -->
+                  <button class="btn btn-costum2 btn-loading d-none" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- akhir contact -->
 
     <!-- footer -->
@@ -485,5 +524,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="js/dragon.js"></script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyCif-pCpQqqFGqGdf52eBriWiGGEJdSV5t6gC85zMF0YLNO9wqu6W6HyVPs8Yqhdpo/exec";
+      const form = document.forms["Port-contact"];
+      const btnkirim = document.querySelector(".btn-kirim");
+      const btnloading = document.querySelector(".btn-loading");
+      const myalert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol load ,hilang tombol kirim
+        btnloading.classList.toggle("d-none");
+        btnkirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim ,hilang tombol load
+            btnloading.classList.toggle("d-none");
+            btnkirim.classList.toggle("d-none");
+            // tampilkan alert
+            myalert.classList.toggle("d-none");
+            // reset form
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

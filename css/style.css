@@ -1,0 +1,98 @@
+:root {
+  --mainColor: #252734;
+  --secondaryColor: #333646;
+  --acsentColor: #ff9100;
+}
+
+body {
+  background-color: var(--mainColor);
+
+  font-family: "ubuntu", sans-serif;
+}
+
+section {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.card .kartus {
+  background-color: var(--secondaryColor);
+}
+
+.contact {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.31);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.31);
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.contact h1 {
+  font-size: 50px;
+}
+.contact h1 span {
+  color: var(--acsentColor);
+}
+.contact .box {
+  flex-direction: column;
+  margin-top: 40px;
+}
+.box div {
+  width: 40%;
+  margin: auto;
+}
+.contact .box input {
+  width: 80%;
+  margin: 20px;
+  outline: none;
+  border: none;
+  background-color: var(--acsentColor);
+  padding: 9px 40px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 16px;
+}
+.box div {
+  position: relative;
+}
+.box div i {
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  top: 20px;
+  left: 20px;
+}
+.contact .box textarea {
+  margin-top: 20px;
+  background-color: transparent;
+  padding: 10px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid #ffde59;
+  outline: none;
+  margin-left: 30px;
+}
+.send {
+  /* background: linear-gradient(#ffde59, #ddb100); */
+  background-color: var(--acsentColor);
+  font-size: 19px !important;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 30px auto !important;
+}
+
+.btn-costum1 {
+  background-color: var(--acsentColor);
+  text-align: center;
+  color: #fff;
+  min-width: 150px;
+  height: 45px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.btn-costum1:hover {
+  box-shadow: 0 0 5px rgba(255, 166, 0, 0.8);
+}

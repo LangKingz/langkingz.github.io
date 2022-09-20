@@ -94,5 +94,19 @@ function scrollActive() {
 window.addEventListener("scroll", scrollActive);
 
 /*=============== LIGHT DARK THEME ===============*/
+const themeButton = document.getElementById("theme-button");
+const lightTheme = "light-theme";
+const iconTheme = "bx-sun";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () => (document.body.classList.contains(lightTheme) ? "dark" : "light");
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "bx bx-moon" : "bx bx-sun");
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](lightTheme);
+  themeButton.classList[selectedIcon === "bx bx-moon" ? "add" : "remove"](iconTheme);
+}
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/

@@ -206,7 +206,7 @@ body.light-theme {
   background-color: hsl(var(--second-hue), 32%, 12%, 0.8);
   width: 92%;
   border-radius: 4rem;
-  padding: 1rem 2.25rem;
+  padding: 1rem 2rem;
   backdrop-filter: blur(10px);
 }
 

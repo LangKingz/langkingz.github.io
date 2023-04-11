@@ -123,7 +123,7 @@ img {
 }
 
 /*========== Variables Dark theme ==========*/
-body.light-theme {
+body .light-theme {
   --title-color: hsl(var(--second-hue), 15%, 95%);
   --text-color: hsl(var(--second-hue), 8%, 35%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);

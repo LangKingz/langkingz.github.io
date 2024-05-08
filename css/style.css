@@ -122,19 +122,14 @@ img {
   color: var(--first-color);
 }
 
-/*========== Variables Dark theme ==========*/
+/*========== Variables Light theme ==========*/
 body .light-theme {
-  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --title-color: hsl(var(--second-hue), 15%, 15%);
   --text-color: hsl(var(--second-hue), 8%, 35%);
-  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+  /* --text-color-light: hsl(var(--second-hue), 4%, 55%); */
   --body-color: hsl(var(--second-hue), 100%, 99%);
   --container-color: #fff;
 }
-
-/*========== 
-    Color changes in some parts of 
-    the website, in light theme
-==========*/
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -367,6 +362,19 @@ body .light-theme {
   border: 2px solid var(--first-color);
   color: var(--first-color);
 }
+
+.button__contact {
+  background-color: var(--first-color-alt);
+  color: var(--body-color);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  /* max-width: 1rem 10rem; */
+}
+
 /*=============== ABOUT ===============*/
 .about__container {
   row-gap: 2.5rem;
@@ -722,6 +730,7 @@ body .light-theme {
   align-items: center;
   justify-content: center;
   column-gap: 0.25rem;
+  
 }
 
 .contact__button:hover .contact__button-icon {
@@ -733,13 +742,24 @@ body .light-theme {
   transition: 0.4s;
 }
 
+
 .contact__form-input {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--text-color-light);
+  background: none;
+  color: var(--text-color);
+  outline: none;
+  padding: 1.5rem;
+  border-radius: .75rem;
+  z-index: 1;
+
 }
 
-/* contact__form-tag {
+.contact__form-tag {
   position: absolute;
   top: -0.75rem;
   left: 1.25rem;
@@ -749,7 +769,7 @@ body .light-theme {
   z-index: 10;
 }
 
-.contact__form-dev {
+.contact__form-div {
   position: relative;
   margin-bottom: 2rem;
   height: 4rem;
@@ -759,7 +779,7 @@ body .light-theme {
   height: 11rem;
 
 }
-} */
+
 /*=============== FOOTER ===============*/
 .footer {
   background-color: var(--first-color);
@@ -858,6 +878,7 @@ body .light-theme {
     margin: 0 auto;
   }
 
+
   .about__info {
     grid-template-columns: repeat(3, 140px);
     justify-content: center;
@@ -924,6 +945,8 @@ body .light-theme {
     margin-left: auto;
     margin-right: auto;
   }
+
+ 
 
   .section {
     padding: 6.5rem 0 1rem;
